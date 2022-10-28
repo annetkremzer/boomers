@@ -3,7 +3,8 @@
 class Enemy {
   constructor() {
     this.generateSkin();
-    this.position = 2;
+    this.position = 29;
+    this.count = 0;
   }
 
   generateSkin() {
@@ -17,7 +18,7 @@ class Enemy {
   }
 
   die() {
-    this.position = '?';
+    this.position = '';
     console.log('Enemy is dead!');
   }
 }

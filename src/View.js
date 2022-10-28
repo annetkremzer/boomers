@@ -1,14 +1,15 @@
 // Сделаем отдельный класс для отображения игры в консоли.
+const readlineSync = require('readline-sync');
 
 class View {
-  render() {
-    const yourTeamName = 'Elbrus';
+  render(track) {
+    // const yourTeamName = readlineSync.question('Enter your name: ');
 
     // Тут всё рисуем.
     console.clear();
-    console.log(this.game.track.join(''));
+    console.log(track.join(''));
     console.log('\n\n');
-    console.log(`Created by "${yourTeamName}" with love`);
+    // console.log(`Created by "${yourTeamName}" with love`);
   }
 }
 
