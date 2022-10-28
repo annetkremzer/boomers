@@ -9,6 +9,7 @@ const View = require('./View');
 
 // Основной класс игры.
 // Тут будут все настройки, проверки, запуск.
+//START))
 
 class Game {
   constructor({ trackLength }) {
