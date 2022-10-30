@@ -1,13 +1,11 @@
 // Основной файл.
 // Запускает игру.
-// Прибыл в здание
-const Game = require('./src/Game');
+const Game = require("./src/Game");
 
 // Инициализация игры с настройками.
 const game = new Game({
-  trackLength: 30,
+  trackLength: 40,
 });
-
 
 // Запуск игры.
 game.play();
