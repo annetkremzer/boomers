@@ -2,9 +2,7 @@
 // Вместо keypress можно использовать и стандартный readline.
 // Главное не используй всё вместе!
 
-const keypress = require('keypress');
-const Hero = require('./game-models/Hero');
-const Boomerang = require('./game-models/Boomerang');
+const keypress = require("keypress");
 
 // Управление.
 // Настроим соответствия нажатий на клавиши и действий в игре.
@@ -12,23 +10,20 @@ const Boomerang = require('./game-models/Boomerang');
 // Какая-то функция.
 
 function runInteractiveConsole(hero) {
-  const keyboard = {
-    a: () => hero.moveLeft(),
-    d: () => hero.moveRight(),
-    space: () => hero.attack(),
-    r: () => console.log('r'),
-    t: () => console.log('t'),
-    y: () => console.log('y'),
-  };
   keypress(process.stdin);
-  process.stdin.on('keypress', (ch, key) => {
+  const keyboard = {
+    d: () => hero.moveRight(),
+    a: () => hero.moveLeft(),
+    space: () => hero.attack(),
+  };
+  process.stdin.on("keypress", (ch, key) => {
     if (key) {
       // Вызывает команду, соответствующую нажатой кнопке.
       if (key.name in keyboard) {
         keyboard[key.name]();
       }
       // Прерывание программы.
-      if (key.ctrl && key.name === 'c') {
+      if (key.ctrl && key.name === "c") {
         process.exit();
       }
     }
