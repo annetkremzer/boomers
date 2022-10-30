@@ -40,5 +40,6 @@ class Boomerang {
     this.position += 1;
   }
 }
+// Спасибо, Илья
 
 module.exports = Boomerang;
