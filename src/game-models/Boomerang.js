@@ -2,16 +2,32 @@
 // В дальнейшем можно добавить другое оружие.
 // Тогда можно будет создать класс Weapon и воспользоваться наследованием!
 
+const Hero = require('./Hero');
+
 class Boomerang {
-  constructor(boomerang) {
+  constructor() {
     this.skin = '🍻';
-    this.position = 0;
-    this.boomerang = this.boomerang;
+    this.position = 1;
+    this.flag = true;
   }
 
   fly() {
-    this.moveRight();
-    this.moveLeft();
+    this.flag = true;
+    const timer = setInterval(() => {
+      this.moveRight();
+      if (this.flag === false) {
+        clearInterval(timer);
+      }
+    }, 100);
+  }
+
+  flyBack(position) {
+    const anyTimer = setInterval(() => {
+      this.moveLeft();
+      if (this.position == position + 1) {
+        clearInterval(anyTimer);
+      }
+    }, 100);
   }
 
   moveLeft() {

@@ -21,12 +21,13 @@ class Game {
     this.hero.boomerang = this.boomerang;
     this.track = [];
     this.regenerateTrack();
+    // this.direction = 0;
   }
 
   regenerateTrack() {
     // Сборка всего необходимого (герой, враг(и), оружие)
     // в единую структуру данных
-
+    this.move();
     this.track = (new Array(this.trackLength)).fill(' ');
     this.track[this.hero.position] = this.hero.skin;
     this.track[this.enemy.position] = this.enemy.skin;
@@ -40,6 +41,16 @@ class Game {
     if (this.boomerang.position === this.enemy.position) {
       this.enemy.die();
     }
+  }
+
+  move() {
+    // if (this.direction === 0) {
+    //   this.boomerang.position = 0;
+    // }
+    // if (this.direction === 1) {
+
+
+    // }
   }
 
   play() {
